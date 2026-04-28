@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Search
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-row class="ion-margin-bottom">
+      <ion-text color="primary" class="full-width-row">
+        <h2 class="react-border title"> Search Item </h2>
+      </ion-text>
+    </ion-row>
+    <ion-row class="flex-nowrap">
+      <ion-col class="flex flex-1">
+        <ion-input class="search-name" placeholder="Item Name" name="search_name" [value]="searchName" (ionChange)="searchName='' + $event.target.value"></ion-input>
+      </ion-col>
+      <ion-col class="flex-0">
+        <ion-button (click)="searchItem()" color="tertiary">Search</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-spinner class="loading" color="tertiary" *ngIf="loading"></ion-spinner>
+    <ion-list class="ion-list" *ngIf="data">
+      <ion-item class="ion-item">
+        <ion-label><h3 class="list-title">Item Name : {{data.item_name}}</h3></ion-label>
+      </ion-item>
+      <ion-item class="ion-item">
+        <ion-label>Item ID : {{data.item_id}}</ion-label>
+      </ion-item>
+      <ion-item class="ion-item">
+        <ion-label>Category : {{data.category}}</ion-label>
+      </ion-item>
+      <ion-item class="ion-item">
+        <ion-label>Quantity : {{data.quantity}}</ion-label>
+      </ion-item>
+      <ion-item class="ion-item">
+        <ion-label>Price : {{data.price}}</ion-label>
+      </ion-item>
+      <ion-item class="ion-item">
+        <ion-label>Supplier Name : {{data.supplier_name}}</ion-label>
+      </ion-item>
+      <ion-item class="ion-item">
+        <ion-label>Stock Status : {{data.stock_status}}</ion-label>
+      </ion-item>
+      <ion-item class="ion-item">
+        <ion-label>Featured Item : {{data.featured_item === 0 ? 'No' : 'Yes'}}</ion-label>
+      </ion-item>
+      <ion-item class="ion-item">
+        <ion-label>Special notes : {{data.special_note}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-row>
+      <ion-text *ngIf="!data && searched && !loading" style="margin: 20px 0">No Result.</ion-text>
+    </ion-row>
+  </div>
+</ion-content>
