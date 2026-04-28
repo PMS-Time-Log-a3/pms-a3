@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{isAdd?'Add New':'Edit'}} Inventory Item
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-row class="ion-margin-bottom">
+      <ion-text color="primary" class="full-width-row">
+        <h2 class="react-border title"> {{isAdd?'Add New':'Edit'}} Inventory Item </h2>
+      </ion-text>
+    </ion-row>
+    <ion-list class="ion-list">
+      <ion-item class="ion-item" *ngIf="!isAdd">
+        <ion-input label="Item ID :" [(ngModel)]="id" [disabled]="!isAdd"></ion-input>
+      </ion-item>
+      <ion-item class="ion-item">
+        <ion-input label="Name :" placeholder="Enter item name" [disabled]="!isAdd" [(ngModel)]="name"></ion-input>
+      </ion-item>
+      <ion-item class="ion-item">
+        <ion-select placeholder="Category :" [(ngModel)]="category">
+          <ion-select-option value="Electronics">Electronics</ion-select-option>
+          <ion-select-option value="Furniture">Furniture</ion-select-option>
+          <ion-select-option value="Clothing">Clothing</ion-select-option>
+          <ion-select-option value="Tools">Tools</ion-select-option>
+          <ion-select-option value="Miscellaneous">Miscellaneous</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="ion-item">
+        <ion-input placeholder="Enter quantity" type="number" min="0" max="9999" step="1" label="Quantity :" [(ngModel)]="quantity"></ion-input>
+      </ion-item>
+      <ion-item class="ion-item">
+        <ion-input placeholder="Enter integer price" type="number" min="0" step="1" label="Price :" [(ngModel)]="price"></ion-input>
+      </ion-item>
+      <ion-item class="ion-item">
+        <ion-input placeholder="Enter supplier name" label="Supplier Name :" [(ngModel)]="supplierName"></ion-input>
+      </ion-item>
+      <ion-item class="ion-item">
+        <ion-select placeholder="Stock Status :" [(ngModel)]="stockStatus">
+          <ion-select-option value="In Stock">In Stock</ion-select-option>
+          <ion-select-option value="Low Stock">Low Stock</ion-select-option>
+          <ion-select-option value="Out of Stock">Out of Stock</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="ion-item">
+        <ion-select placeholder="Featured Item :" [(ngModel)]="featuredItem">
+          <ion-select-option value="0">No</ion-select-option>
+          <ion-select-option value="1">Yes</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="ion-item">
+        <ion-input placeholder="Enter special note" label="Special note :" [(ngModel)]="specialNote"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)="saveItem()" color="tertiary">{{isAdd ? 'Add' : 'Edit'}}</ion-button>
+    <ion-button (click)="goToBack()" color="tertiary">Back</ion-button>
+  </div>
+</ion-content>
