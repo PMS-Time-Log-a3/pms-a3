@@ -1,0 +1,26 @@
+h1, h2 {
+  color: var(--app-heading);
+  background: none;
+}
+
+.faq-question {
+  font-size: 20px;
+  background-color: var(--app-soft);
+  color: #123f5c;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.faq-answer {
+  background-color: var(--app-soft-2);
+  color: #31576c;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}

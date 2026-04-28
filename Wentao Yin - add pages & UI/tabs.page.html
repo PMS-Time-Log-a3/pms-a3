@@ -1,0 +1,87 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="list">
+      <ion-icon name="clipboard-outline"></ion-icon>
+      <ion-label>List</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="add">
+      <ion-icon name="create-outline"></ion-icon>
+      <ion-label>Add</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="featured-list">
+      <ion-icon name="star-outline"></ion-icon>
+      <ion-label>Featured List</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="search">
+      <ion-icon name="locate-outline"></ion-icon>
+      <ion-label>Search</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+<ion-fab slot="fixed" vertical="top" horizontal="end">
+  <ion-fab-button size="small" (click)="isOpen = true">
+    <ion-icon name="help-circle-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+<ion-modal [isOpen]="isOpen" (willDismiss)="isOpen = false">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="isOpen = false">Cancel</ion-button>
+        </ion-buttons>
+        <ion-title>Help</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <div class="container">
+        <h1>Inventory App Quick Guide</h1>
+        <p>This guide explains the main workflow for the mobile inventory system created by &#40644;&#20016;&#20806; Fengzhao Huang 24832216 and &#27575;&#25991;&#28059; Wentao Yin 24833028.</p>
+
+        <h2>Core Pages</h2>
+
+        <div class="faq-item">
+          <p class="faq-question">1. What is the List page for?</p>
+          <div class="faq-answer">The List page shows all remote inventory records and provides edit and delete buttons for each item.</div>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">2. How do I add a new item?</p>
+          <div class="faq-answer">Open the Add tab, complete the required fields, choose the category and stock status, then submit the form.</div>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">3. How do I search for one item?</p>
+          <div class="faq-answer">Open the Search tab and enter the unique item name. The page displays the matching record returned by the server.</div>
+        </div>
+
+        <h2>Form Rules</h2>
+
+        <div class="faq-item">
+          <p class="faq-question">1. Which fields are required?</p>
+          <div class="faq-answer">Name, category, quantity, price, supplier name, stock status, and featured item must be completed. Special note is optional.</div>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-question">2. Why are quantity and price checked?</p>
+          <div class="faq-answer">Both fields match integer columns in the database, so the app accepts whole numbers only.</div>
+        </div>
+
+        <h2>Safety Notes</h2>
+
+        <div class="faq-item">
+          <p class="faq-question">1. What should I check before deleting?</p>
+          <div class="faq-answer">Confirm the item name and details first. Delete operations are permanent unless the server rejects the request.</div>
+        </div>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>
