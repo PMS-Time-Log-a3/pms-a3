@@ -1,0 +1,91 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="content">
+      <ion-text color="primary">
+        <h1>Mobile Inventory Control</h1>
+      </ion-text>
+      <ion-text color="tertiary">
+        <h4>Inventory records in one place</h4>
+        <p>This Ionic application helps users manage inventory records through a mobile-friendly interface. Each record stores the required item name, category, quantity, price, supplier name, stock status, featured item value, and optional special note.</p>
+        <h4>Connected to the assessment API</h4>
+        <p>The app communicates with the remote REST endpoint to list all records, search for a single item by name, create new records, update existing records, and delete records when allowed by the server.</p>
+        <h4>Clear stock information</h4>
+        <p>Items are organised with stock status values such as In Stock, Low Stock, and Out of Stock, making it easier to understand availability and identify records that may need attention.</p>
+        <h4>Validation before submission</h4>
+        <p>The form checks required fields before sending data. Quantity and price must be whole numbers, while category and stock status must be selected from the allowed values.</p>
+        <h4>Separate pages for key tasks</h4>
+        <p>The List page shows all records and supports editing or deleting. The Add page creates new records. The Search page finds one item by name. The Featured page displays records marked as featured.</p>
+      </ion-text>
+      <ion-text class="ion-padding" color="medium">
+        <h3> Authors </h3>
+      </ion-text>
+      <ion-row>
+        <ion-text color="medium">
+          <ion-icon name="id-card-outline"></ion-icon>
+          <ion-text>&#40644;&#20016;&#20806; Fengzhao Huang 24832216</ion-text>
+        </ion-text>
+      </ion-row>
+      <ion-row>
+        <ion-text color="medium">
+          <ion-icon name="id-card-outline"></ion-icon>
+          <ion-text>&#27575;&#25991;&#28059; Wentao Yin 24833028</ion-text>
+        </ion-text>
+      </ion-row>
+      <ion-text class="ion-padding" color="primary">
+        <h3> Privacy and Security </h3>
+        <ion-button style="margin-top: 20px" id="open-modal" size="small" color="tertiary">Open</ion-button>
+        <ion-modal #modal1 trigger="open-modal" (willDismiss)="modal1?.dismiss()">
+          <ng-template>
+            <ion-header>
+              <ion-toolbar>
+                <ion-buttons slot="start">
+                  <ion-button (click)="modal1?.dismiss()">Cancel</ion-button>
+                </ion-buttons>
+                <ion-title>Privacy and Security</ion-title>
+              </ion-toolbar>
+            </ion-header>
+            <ion-content>
+              <div class="container">
+                <ion-text color="primary">
+                  <h1>Using Inventory Data Responsibly</h1>
+                </ion-text>
+                <ion-text color="tertiary">
+                  <h3>Shared database notice</h3>
+                </ion-text>
+                <p>The app works with a remote assessment database. Records created in the app may be visible through the same endpoint, so item details should be appropriate and related to inventory work.</p>
+                <ion-text color="tertiary">
+                  <h3>Accurate item names</h3>
+                </ion-text>
+                <p>Item names are unique and are used for searching, updating, and deleting. Users should check spelling before saving a new item or changing an existing record.</p>
+                <ion-text color="tertiary">
+                  <h3>Limit sensitive information</h3>
+                </ion-text>
+                <p>Inventory fields should describe products only. Supplier names and special notes should not contain passwords, payment details, private contact information, or unrelated personal information.</p>
+                <ion-text color="tertiary">
+                  <h3>Careful update and delete actions</h3>
+                </ion-text>
+                <p>Changes are sent directly to the server. Users should review the selected item carefully before confirming edits or deletion because removed records may not be recoverable from the app.</p>
+                <ion-text color="tertiary">
+                  <h3>Device safety</h3>
+                </ion-text>
+                <p>When using a shared computer or mobile device, users should close the browser after finishing so another person does not accidentally continue editing inventory records.</p>
+                <ion-text color="tertiary">
+                  <h3>Possible future improvements</h3>
+                </ion-text>
+                <p>The app could be improved with user sign-in, role-based permissions, and an audit history for important changes.</p>
+              </div>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+      </ion-text>
+    </div>
+  </div>
+</ion-content>

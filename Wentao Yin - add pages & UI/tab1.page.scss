@@ -1,0 +1,29 @@
+.content {
+  background-color: var(--app-panel);
+  padding: 12px;
+  color: var(--app-ink);
+  border-radius: 4px;
+}
+
+ion-icon {
+  margin-right: 6px;
+}
+
+p {
+  background-color: var(--app-soft);
+  color: #17324d;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.ion-list, .ion-item, .item-native {
+  background-color: transparent;
+  --background: transparent;
+  color: var(--app-ink);
+}
